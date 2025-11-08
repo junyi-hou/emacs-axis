@@ -52,6 +52,7 @@
         ON CONFLICT(command, key) DO UPDATE SET count = count + 1;"
        (list (symbol-name this-command) key-str)))))
 
+;;;###autoload
 (defun axis-show-command-summary ()
   "Display commands and their associated keys with usage counts."
   (interactive)
