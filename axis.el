@@ -84,7 +84,8 @@
       (message "Axis mode disabled."))))
 
 (defun axis-turn-on-axis-mode ()
-  (axis-mode 1))
+  (cl-letf (((symbol-function #'message) #'ignore))
+   (axis-mode 1)))
 
 (define-globalized-minor-mode global-axis-mode axis-mode axis-turn-on-axis-mode)
 
